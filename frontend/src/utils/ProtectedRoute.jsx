@@ -11,7 +11,8 @@ const ProtectedRoute = ({ children ,requireRole}) => {
     useEffect (() => {
 
 
-        console.log("ProtectedRoute user:", user);
+        console.log("ProtectedRoute user is this:", user);
+
         if(!user) {
             navigate("/login");
             return;

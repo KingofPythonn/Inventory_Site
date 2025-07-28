@@ -28,7 +28,8 @@ const Login =() =>{
          
          const response = await axios.post("http://localhost:3000/api/auth/login", { email,password});
          if (response.data.success) {
-          await login(response.data.token, response.data.user);
+          await login(response.data.user, response.data.token);
+          
           if (response.data.user.role === "admin") {
                navigate("/admin/dashboard");
             }else {  
